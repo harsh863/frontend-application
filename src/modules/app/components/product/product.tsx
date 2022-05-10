@@ -8,6 +8,7 @@ import ProductUser from './product-user';
 import ProductDetail from './product-detail';
 import ProductResolver from '../../resolvers/product.resolver';
 import { Product } from '../../../../models/main/product/product.model';
+import ProductCompanyAddress from './product-company-address';
 
 const ProductPage = () => {
   const appConfig: AppConfig = useSelector(appConfigSelector)!;
@@ -21,13 +22,14 @@ const ProductPage = () => {
             <ProductBasicInfo product={selectedProduct} />
             <ProductDetail product={selectedProduct} />
           </div>
-          <div className='w-full lg:w-2/6'>
+          <div className='w-full flex flex-col gap-4 lg:w-2/6'>
             {appConfig.hasUserSection && (
               <ProductUser
                 user={selectedProduct.user}
                 company={selectedProduct.company}
               />
             )}
+            <ProductCompanyAddress product={selectedProduct} />
           </div>
         </div>
       </div>

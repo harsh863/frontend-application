@@ -108,7 +108,6 @@ const ProductCategories = ({ product, onUpdateProduct }: Props) => {
                 </div>
               ))}
             </div>
-            <div className='flex-grow'></div>
             <div className='flex flex-col w-full gap-2 mt-4'>
               <button
                 type='button'
